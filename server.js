@@ -1,33 +1,23 @@
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
+const express = require("express");
+const mongoose = require("mongoose");
 
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const PORT = process.env.PORT || 3000;
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
-const sess = {
-    secret: 'Super secret secret',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    })
-};
-
-app.use(session(sess));
-
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 
-app.use(routes);
+app.use(express.static("public"));
 
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workouts", {
+    useNewUrlParser: true,
+    useFindAndModify: false
+});
+
+// routes
+app.use(require("./routes/api.js"));
+
+app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}!`);
 });
