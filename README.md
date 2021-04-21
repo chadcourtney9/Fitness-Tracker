@@ -1,7 +1,5 @@
 # Fitness-Tracker
 
-# E-commerce
-
 ### ![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 
 ### This past week I was tasked with creating an app that would view, create and track daily workouts. It also allows you to log multiple sessions in one day, as well as track the names and types of workouts and all that come with such as weight, reps, sets and duration. For this project I used a few different technologies to accomplish this that you can see down below.
