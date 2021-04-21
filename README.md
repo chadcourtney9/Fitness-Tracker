@@ -4,6 +4,8 @@
 
 ### This past week I was tasked with creating an app that would view, create and track daily workouts. It also allows you to log multiple sessions in one day, as well as track the names and types of workouts and all that come with such as weight, reps, sets and duration. For this project I used a few different technologies to accomplish this that you can see down below.
 
+<a href="https://lit-shore-77411.herokuapp.com/?id=607d95d51873600015c1794a" target="_blank">See deployed page here </a>
+
 # Screen shots of page
 ![homepage](https://github.com/chadcourtney9/Fitness-Tracker/blob/main/public/images/homepage.PNG)
 ![dashboard](https://github.com/chadcourtney9/Fitness-Tracker/blob/main/public/images/dashboard.PNG)
